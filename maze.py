@@ -2,6 +2,7 @@ from tkinter import *
 import tkinter.messagebox as messagebox
 import random
 import copy
+import time
 
 WALL  = 1
 PATH  = 2
@@ -85,6 +86,8 @@ def auto_walk():
             if j != 0 and j != len(stack)-1:
                 x, y = i
                 canvas.itemconfig(maze_image[x][y], image=image_path_found)
+                canvas.update()
+                time.sleep(0.1)
         cur_row, cur_col = stack[0] # 恢复当前位置
 
 # 从上/下/左/右四个方向可走的格子中任选一个返回
